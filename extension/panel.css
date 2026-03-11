@@ -230,6 +230,30 @@
   word-break: break-all;
 }
 
+#tcp-playground .tcp-output-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--tcp-border);
+}
+
+#tcp-playground .tcp-output-label {
+  color: var(--tcp-text-muted);
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+#tcp-playground .tcp-output-value {
+  color: #ffd54f;
+  font-size: 13px;
+  font-family: Menlo, Monaco, "Courier New", monospace;
+  word-break: break-all;
+}
+
 #tcp-playground .tcp-textarea {
   width: 100%;
   min-height: 64px;

@@ -36,9 +36,8 @@ Include:
 Return ONLY JSON in this format:
 
 [
-  {"input": "example input 1"},
-  {"input": "example input 2"},
-  {"input": "example input 3"}
+  {"input": "example input 1", "expected_output": "expected output 1"},
+  {"input": "example input 2", "expected_output": "expected output 2"}
 ]
 
 Do not include explanations.`;
@@ -87,6 +86,7 @@ Do not include explanations.`;
 
         return testcases.map((tc) => ({
             input: typeof tc.input === "string" ? tc.input : JSON.stringify(tc.input),
+            expected_output: tc.expected_output != null ? String(tc.expected_output) : "",
         }));
     }
 

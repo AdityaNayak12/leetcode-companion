@@ -59,7 +59,18 @@ const TestcasePanel = (() => {
                 _el("span", { className: "tcp-item-index", textContent: `#${i + 1}` }),
             ]);
             const body = _formatInput(tc.input);
-            const li = _el("li", { className: "tcp-list-item" }, [header, body]);
+            const children = [header, body];
+
+            if (tc.expected_output) {
+                children.push(
+                    _el("div", { className: "tcp-output-row" }, [
+                        _el("span", { className: "tcp-output-label", textContent: "→ Output:" }),
+                        _el("span", { className: "tcp-output-value", textContent: tc.expected_output }),
+                    ])
+                );
+            }
+
+            const li = _el("li", { className: "tcp-list-item" }, children);
             ul.appendChild(li);
         });
         container.appendChild(ul);
