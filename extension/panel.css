@@ -1,0 +1,313 @@
+:root {
+  --tcp-bg-primary: #282828;
+  --tcp-bg-secondary: #303030;
+  --tcp-bg-tertiary: #3a3a3a;
+  --tcp-bg-input: #1e1e1e;
+  --tcp-accent: #ffa116;
+  --tcp-accent-hover: #ffb84d;
+  --tcp-text-primary: #eff1f6;
+  --tcp-text-secondary: #ababab;
+  --tcp-text-muted: #808080;
+  --tcp-border: #404040;
+  --tcp-border-light: #4a4a4a;
+  --tcp-success: #2cbb5d;
+  --tcp-danger: #ef4743;
+  --tcp-radius: 8px;
+  --tcp-transition: 0.15s ease;
+}
+
+#tcp-playground {
+  margin: 16px 0;
+  padding: 20px;
+  background: var(--tcp-bg-primary);
+  border: 1px solid var(--tcp-border);
+  border-radius: var(--tcp-radius);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  color: var(--tcp-text-primary);
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+#tcp-playground .tcp-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--tcp-border);
+  color: var(--tcp-text-primary);
+}
+
+#tcp-playground .tcp-title::before {
+  content: "🧪";
+  font-size: 18px;
+}
+
+#tcp-playground .tcp-section {
+  margin-bottom: 16px;
+  padding: 16px;
+  background: var(--tcp-bg-secondary);
+  border-radius: var(--tcp-radius);
+  border: 1px solid var(--tcp-border);
+}
+
+#tcp-playground .tcp-section:last-child {
+  margin-bottom: 0;
+}
+
+#tcp-playground .tcp-section-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--tcp-text-primary);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+#tcp-playground .tcp-section-title .tcp-icon {
+  font-size: 14px;
+}
+
+#tcp-playground .tcp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border: none;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--tcp-transition);
+}
+
+#tcp-playground .tcp-btn:active {
+  transform: scale(0.97);
+}
+
+#tcp-playground .tcp-btn-primary {
+  background: rgba(255, 161, 22, 0.15);
+  color: var(--tcp-accent);
+  border: 1px solid rgba(255, 161, 22, 0.3);
+}
+
+#tcp-playground .tcp-btn-primary:hover {
+  background: rgba(255, 161, 22, 0.25);
+  border-color: var(--tcp-accent);
+}
+
+#tcp-playground .tcp-btn-secondary {
+  background: var(--tcp-bg-tertiary);
+  color: var(--tcp-text-secondary);
+  border: 1px solid var(--tcp-border);
+}
+
+#tcp-playground .tcp-btn-secondary:hover {
+  background: var(--tcp-border);
+  color: var(--tcp-text-primary);
+}
+
+#tcp-playground .tcp-btn-danger {
+  background: rgba(239, 71, 67, 0.1);
+  color: var(--tcp-danger);
+  border: 1px solid rgba(239, 71, 67, 0.25);
+}
+
+#tcp-playground .tcp-btn-danger:hover {
+  background: rgba(239, 71, 67, 0.2);
+  border-color: var(--tcp-danger);
+}
+
+#tcp-playground .tcp-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+#tcp-playground .tcp-btn-group {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+#tcp-playground .tcp-list {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+#tcp-playground .tcp-list::-webkit-scrollbar {
+  width: 5px;
+}
+
+#tcp-playground .tcp-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#tcp-playground .tcp-list::-webkit-scrollbar-thumb {
+  background: var(--tcp-border);
+  border-radius: 3px;
+}
+
+#tcp-playground .tcp-list-item {
+  padding: 10px 14px;
+  margin-bottom: 6px;
+  background: var(--tcp-bg-input);
+  border-radius: 6px;
+  font-size: 13px;
+  font-family: Menlo, Monaco, "Courier New", monospace;
+  color: var(--tcp-text-primary);
+  word-break: break-word;
+  border-left: 3px solid var(--tcp-border-light);
+  transition: all var(--tcp-transition);
+}
+
+#tcp-playground .tcp-list-item:hover {
+  border-left-color: var(--tcp-accent);
+  background: #242424;
+}
+
+#tcp-playground .tcp-item-header {
+  margin-bottom: 6px;
+}
+
+#tcp-playground .tcp-list-item .tcp-item-index {
+  display: inline-block;
+  background: var(--tcp-bg-tertiary);
+  color: var(--tcp-text-secondary);
+  font-weight: 600;
+  font-size: 11px;
+  padding: 1px 7px;
+  border-radius: 3px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+#tcp-playground .tcp-list-item .tcp-item-label {
+  color: var(--tcp-text-muted);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 2px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+#tcp-playground .tcp-params {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+#tcp-playground .tcp-param-row {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  padding: 2px 0;
+}
+
+#tcp-playground .tcp-param-key {
+  color: #79b8ff;
+  font-weight: 500;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+#tcp-playground .tcp-param-sep {
+  color: var(--tcp-text-muted);
+  font-size: 12px;
+}
+
+#tcp-playground .tcp-param-value {
+  color: #a5d6a7;
+  font-size: 13px;
+  word-break: break-all;
+}
+
+#tcp-playground .tcp-textarea {
+  width: 100%;
+  min-height: 64px;
+  padding: 10px 12px;
+  border: 1px solid var(--tcp-border);
+  border-radius: 4px;
+  background: var(--tcp-bg-input);
+  color: var(--tcp-text-primary);
+  font-family: Menlo, Monaco, "Courier New", monospace;
+  font-size: 13px;
+  resize: vertical;
+  transition: border-color var(--tcp-transition);
+  box-sizing: border-box;
+}
+
+#tcp-playground .tcp-textarea:focus {
+  outline: none;
+  border-color: var(--tcp-accent);
+}
+
+#tcp-playground .tcp-textarea::placeholder {
+  color: var(--tcp-text-muted);
+}
+
+#tcp-playground .tcp-field-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--tcp-text-secondary);
+  margin-bottom: 4px;
+  margin-top: 10px;
+}
+
+#tcp-playground .tcp-field-label:first-child {
+  margin-top: 0;
+}
+
+#tcp-playground .tcp-spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--tcp-border);
+  border-top-color: var(--tcp-accent);
+  border-radius: 50%;
+  animation: tcp-spin 0.6s linear infinite;
+  vertical-align: middle;
+}
+
+@keyframes tcp-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#tcp-playground .tcp-status {
+  font-size: 12px;
+  margin-top: 8px;
+  min-height: 16px;
+  color: var(--tcp-text-secondary);
+}
+
+#tcp-playground .tcp-status.success {
+  color: var(--tcp-success);
+}
+
+#tcp-playground .tcp-status.error {
+  color: var(--tcp-danger);
+}
+
+#tcp-playground .tcp-empty {
+  text-align: center;
+  padding: 16px;
+  color: var(--tcp-text-muted);
+  font-size: 13px;
+}
+
+#tcp-playground .tcp-divider {
+  border: none;
+  border-top: 1px solid var(--tcp-border);
+  margin: 16px 0;
+}
